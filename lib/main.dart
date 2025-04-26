@@ -26,7 +26,6 @@ void main() => runApp(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
               ),
               onPressed: () {},
-              //   style: ButtonStyle(,
               child: Text('Start Quiz'),
             ),
           ],
