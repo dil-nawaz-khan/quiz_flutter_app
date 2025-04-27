@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class QuestionSummary extends StatelessWidget {
   const QuestionSummary(this.summaryData, {super.key});
@@ -9,7 +8,7 @@ class QuestionSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400.0,
+      height: 300.0,
       child: SingleChildScrollView(
         child: Column(
           children:
@@ -19,23 +18,10 @@ class QuestionSummary extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 10.0,
                   children: [
-                    Container(
-                      height: 30,
-                      width: 30,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color:
-                            isCorrect
-                                ? Color.fromARGB(255, 150, 198, 241)
-                                : Color.fromARGB(255, 249, 133, 241),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: Text(
-                        ((data['question_index'] as int) + 1).toString(),
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 22, 2, 56),
-                        ),
+                    Text(
+                      ((data['question_index'] as int) + 1).toString(),
+                      style: TextStyle(
+                        color: isCorrect ? Colors.white : Colors.red,
                       ),
                     ),
                     Expanded(
@@ -44,25 +30,21 @@ class QuestionSummary extends StatelessWidget {
                         children: [
                           Text(
                             data['question'] as String,
-                            style: GoogleFonts.lato(
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w700,
                             ),
                             textAlign: TextAlign.start,
                           ),
                           SizedBox(height: 5.0),
                           Text(
                             data['user_answer'] as String,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 202, 171, 252),
-                            ),
+                            style: TextStyle(color: Colors.white60),
                           ),
                           Text(
                             data['correct_answer'] as String,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 181, 254, 246),
-                            ),
+                            style: TextStyle(color: Colors.blueAccent),
                           ),
                         ],
                       ),
