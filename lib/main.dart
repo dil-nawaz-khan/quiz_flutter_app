@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:quiz_flutter_app/start_screen.dart';
+import 'package:quiz_flutter_app/quiz.dart';
 
 // void main() {
 //   return runApp(
@@ -44,20 +44,5 @@ import 'package:quiz_flutter_app/start_screen.dart';
 
 // Max Solution
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.deepPurple, Colors.deepPurpleAccent],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: StartScreen(),
-        ),
-      ),
-    ),
-  );
+  runApp(Quiz());
 }
